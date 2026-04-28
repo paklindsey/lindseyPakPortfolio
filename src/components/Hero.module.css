@@ -1,0 +1,114 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* grain */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* meta row */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.metaLeft,
+.metaRight {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s ease 1.6s,
+    transform 0.7s ease 1.6s;
+}
+.metaRight {
+  text-align: right;
+  transition-delay: 1.7s;
+}
+.metaLeft.show,
+.metaRight.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* name */
+.name {
+  font-family: var(--serif);
+  font-size: clamp(80px, 13vw, 200px);
+  font-weight: 400;
+  /* line-height: 1; */
+  letter-spacing: -0.02em;
+  overflow: hidden;
+}
+
+.char {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition:
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s ease;
+}
+.charIn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* tagline */
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s ease 1.5s,
+    transform 0.7s ease 1.5s;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--fg-dim);
+}
+.tagline.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.divider {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--fg-dim);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.scrollHint {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 24px 60px;
+  }
+}
