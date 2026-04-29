@@ -1,11 +1,11 @@
-import styles from './Contact.module.css'
+import styles from "./Contact.module.css";
 
 const SOCIALS = [
-  { num: '01', label: 'Twitter / X', href: '#' },
-  { num: '02', label: 'LinkedIn', href: '#' },
-  { num: '03', label: 'GitHub', href: '#' },
-  { num: '04', label: 'Dribbble', href: '#' },
-]
+  { num: "01", label: "Twitter / X", href: "#" },
+  { num: "02", label: "LinkedIn", href: "#" },
+  { num: "03", label: "GitHub", href: "#" },
+  { num: "04", label: "Dribbble", href: "#" },
+];
 
 export default function Contact() {
   return (
@@ -22,13 +22,15 @@ export default function Contact() {
           Let's make something together
         </span>
         <h2 className={`${styles.heading} reveal reveal-delay-1`}>
-          Get in<br /><em>touch.</em>
+          Get in
+          <br />
+          <em>touch.</em>
         </h2>
         <a
           href="mailto:hello@lindsey.dev"
           className={`${styles.email} reveal reveal-delay-2`}
         >
-          hello@lindsey.dev <span className={styles.arrow}>↗</span>
+          paklindsey@gmail.com <span className={styles.arrow}>↗</span>
         </a>
         <ul className={`${styles.social} reveal reveal-delay-3`}>
           {SOCIALS.map(({ num, label, href }) => (
@@ -42,5 +44,5 @@ export default function Contact() {
         </ul>
       </div>
     </section>
-  )
+  );
 }

@@ -31,10 +31,12 @@
 }
 .item:hover::before { transform: scaleX(1); }
 
-.num {
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.08em;
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7a8c5e;
+  flex-shrink: 0;
 }
 
 .info { display: flex; flex-direction: column; gap: 6px; }
